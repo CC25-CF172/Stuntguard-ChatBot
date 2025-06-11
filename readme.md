@@ -24,7 +24,7 @@ Proyek ini adalah sebuah chatbot sederhana yang dikembangkan menggunakan bahasa 
 
 1. Pastikan Anda berada di direktori proyek.
 2. Pastikan model telah dilatih dan disimpan sebagai `chatbot_model.h5`.
-3. Buat virtual envorement dengan perintah
+3. Buat virtual env dengan perintah
    ```shell
     py -m venv .env
    ```
