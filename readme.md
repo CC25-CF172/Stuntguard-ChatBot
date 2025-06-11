@@ -15,10 +15,6 @@ Proyek ini adalah sebuah chatbot sederhana yang dikembangkan menggunakan bahasa 
    ```bash
    cd Stuntguard-ChatBot
    ```
-4. Instal dependensi yang diperlukan menggunakan pip:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Cara Menjalankan Chatbot
 
