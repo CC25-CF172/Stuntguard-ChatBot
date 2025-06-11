@@ -23,48 +23,56 @@ Proyek ini adalah sebuah chatbot sederhana yang dikembangkan menggunakan bahasa 
 ## Cara Menjalankan Chatbot
 
 1. Pastikan Anda berada di direktori proyek.
-2. Buka file notebook `notebook.ipynb` di Jupyter Notebook dan jalankan setiap sel.
-3. Pastikan model telah dilatih dan disimpan sebagai `chatbot_model.h5`.
-4. Ketik pertanyaan Anda di sel terakhir dan tekan `Shift+Enter` untuk mendapatkan respon dari chatbot.
+2. Pastikan model telah dilatih dan disimpan sebagai `chatbot_model.h5`.
+3. Buat virtual envorement dengan perintah
+   ```shell
+    py -m venv .env
+   ```
+4. Aktifkan virtual env dengan perintah
+   ```shell
+   .env\Scripts\Activate.ps1
+   ```
+5. install requirements.txt
+   ```shell
+   pip install -r requirements.txt
+   ```
+6. Setelah requirements.txt terinstal, ketik perintah di terminal
+   ```shell
+   py
+   import nltk
+   nltk.download('punkt')
+   nltk.download('wordnet')
+   ```
+7. jalankan file chatBot.py dengan perintah
+   ```shell
+   py chatBot.py
+   ```
 
 ## Struktur File Proyek
 
 ```
 Stuntguard-ChatBot/
 │
-├── notebook.ipynb            # Notebook untuk eksplorasi dan pelatihan model chatbot
-├── chatbot_model.h5          # File model chatbot yang telah dilatih (format Keras HDF5)
-├── classes.pkl               # Pickle berisi daftar kelas intent
-├── words.pkl                 # Pickle berisi daftar kata yang telah diproses
-├── stunting_intents.json     # Dataset intent untuk chatbot (format JSON)
-├── readme.md                 # Dokumentasi proyek
-├── requirements.txt          # Daftar pustaka/dependensi Python yang diperlukan
+├── notebook.ipynb            # Notebook eksplorasi data, preprocessing, dan pelatihan model chatbot
+├── chatbot_model.h5          # File model chatbot hasil pelatihan dalam format HDF5 (Keras)
+├── classes.pkl               # File pickle berisi daftar label intent (kelas-kelas chatbot)
+├── words.pkl                 # File pickle berisi kosakata (daftar kata unik yang telah diproses)
+├── stunting_intents.json     # Dataset intent dan respons chatbot bertema stunting (format JSON)
+├── chatBot.py                # Skrip chatbot siap pakai di terminal (versi interaktif untuk input manual)
+├── readme.md                 # Dokumentasi proyek: deskripsi, cara kerja, petunjuk instalasi & penggunaan
+├── requirements.txt          # Daftar pustaka Python yang dibutuhkan (untuk `pip install -r requirements.txt`)
+
 
 ```
 
 ## Contoh Penggunaan
 
-Berikut adalah contoh interaksi dengan chatbot pada sell terakhir:
+Berikut adalah contoh interaksi dengan chatbot pada terminal:
 
-```python
-test_messages = [
-"makasih",
-"susah makan",
-"tinggi badan",
-"anak saya susah makan",
-"bagaimana cara mengatasi stunting",
-"apa itu stunting",
-"anak saya pendek",
-"anak saya tidak mau makan sayur",
-"bagaimana cara meningkatkan tinggi badan anak",
-"apa yang harus dilakukan jika anak tidak mau makan",
-"saya khawatir anak saya stunting",
-"apakah susu bisa membantu pertumbuhan anak",
-"berapa tinggi ideal anak usia 5 tahun",
-"anak saya sering sakit, apakah itu tanda stunting",
-"bagaimana cara mengetahui anak saya stunting",
-"  tuliskan pertanyaan baru "
-]
+```shell
+Halo! Saya adalah Chatbot Stunting Asisten. Ketik 'keluar' untuk mengakhiri.
+
+Anda :
 ```
 
-Tambahkan daftar pertanyaan baru yang ingin Anda uji ke dalam list test_messages, kemudian jalankan skrip dengan menekan tombol Shift + Enter.
+Ketikkan pesan anda pada terminal
